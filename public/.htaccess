@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /taskflow/public/
+
+    # Si ce n'est pas un fichier ou un dossier physique existant, on redirige vers index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirection vers index.php en conservant les paramètres
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
