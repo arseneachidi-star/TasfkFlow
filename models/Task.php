@@ -55,4 +55,9 @@ class Task {
         $stmt = $this->db->prepare("DELETE FROM tasks WHERE id = :id");
         return $stmt->execute(['id' => $taskId]);
     }
+      public function getAllTasks() {
+        // Cibler la table 'tasks' et récupérer les champs nécessaires (adaptez 'title' si besoin selon votre base)
+        $stmt = $this->db->query("SELECT id, title, status FROM tasks"); 
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
