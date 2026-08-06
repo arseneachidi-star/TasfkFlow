@@ -1,5 +1,4 @@
 taskflow/
-│
 ├── config/
 │   └── database.php          # Connexion PDO à la base de données
 │
@@ -10,13 +9,13 @@ taskflow/
 │
 ├── models/
 │   ├── User.php              # Modèle de données pour les utilisateurs
-│   ├── Project.php           # Modèle de données pour les projets (avec les 5 arguments pour create)
+│   ├── Project.php           # Modèle de données pour les projets
 │   └── Task.php              # Modèle de données pour les tâches
 │
 ├── public/
-│   ├── index.php             # Front Controller (le routeur unique qui analyse les URLs)
-│   ├── .htaccess             # (Optionnel) Réécriture d'URL si tu gères du URL rewriting
-│   └── assets/               # Dossier pour tes fichiers CSS personnalisés, JS ou images
+│   ├── index.php             # Front Controller (routeur unique)
+│   ├── .htaccess             # Réécriture d'URL (URL rewriting)
+│   └── assets/               # Dossier pour les fichiers CSS, JS, images
 │
 └── views/
     ├── auth/
@@ -26,5 +25,5 @@ taskflow/
     │   ├── index.php         # Tableau de bord principal (liste des projets)
     │   └── create.php        # Formulaire de création d'un projet
     └── tasks/
-        ├── index.php         # Liste des tâches d'un projet spécifique
+        ├── index.php         # Liste des tâches
         └── create.php        # Formulaire de création d'une tâche
