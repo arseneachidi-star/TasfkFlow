@@ -30,6 +30,12 @@ class User {
             'password' => $hashedPassword
         ]);
     }
+       // Methode de vérification de rôle administrateur 
+
+    public function getAllUsers() {
+    $stmt = $this->db->query("SELECT id, username, email, role FROM users");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     /**
      * Vérifier les identifiants de connexion
